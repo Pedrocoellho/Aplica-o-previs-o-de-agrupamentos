@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-encoder = joblib.load('C:\\Users\\anime\\Documents\\Curso Alura\\curso de clusterização\\encoder,pkl')
-scaler = joblib.load('C:\\Users\\anime\\Documents\Curso Alura\\curso de clusterização\\scaler.pkl')
-kmeans = joblib.load('C:\\Users\\anime\\Documents\\Curso Alura\\curso de clusterização\\kmeans.pkl')
+encoder = joblib.load('encoder.pkl')
+scaler = joblib.load('scaler.pkl')
+kmeans = joblib.load('kmeans.pkl')
 
 st.title('Grupos de interesse para marketing')
 st.write("""
@@ -42,4 +42,5 @@ if up_file is not None:
     st.write(df.head(10))
 
     csv = df.to_csv(index=False)
+
     st.download_button(label='Baixar resultados completos', data = csv, file_name = 'Grupos_interesse.csv', mime='text/csv')
