@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-encoder = joblib.load('encoder,pkl')
+encoder = joblib.load('encoder.pkl')
 scaler = joblib.load('scaler.pkl')
 kmeans = joblib.load('kmeans.pkl')
 
@@ -44,4 +44,5 @@ if up_file is not None:
     csv = df.to_csv(index=False)
 
     st.download_button(label='Baixar resultados completos', data = csv, file_name = 'Grupos_interesse.csv', mime='text/csv')
+
 
